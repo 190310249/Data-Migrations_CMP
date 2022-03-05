@@ -1,3 +1,9 @@
+import boto3
+import psycopg2
+import os
+import logging 
+import logging.config
+
 if __name__ == '__main__':
 
     try:

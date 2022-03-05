@@ -2,6 +2,7 @@ import boto3
 import psycopg2
 import os
 from logging import *
+import datetime
 
 LOG_FORMAT = '{lineno}  : {name}: {asctime}: {message}'
 basicConfig(filename='logfile.log',level=DEBUG, filemode = 'a',style='{',format=LOG_FORMAT)
@@ -135,7 +136,7 @@ if __name__ == '__main__':
                                 print("Parquet file validation will happen")
                                 copy_command = ("COPY global.ecy_job1 FROM " + "'s3://parquet-bucket-1/" + table_list[split_table_list.index(i)][0] + "{}'".format(l[0]) + "IAM_ROLE 'arn:aws:iam::0123456789:role/sf_poc_redshift_role'" + 'FORMAT AS PARQUET;')
 
-                                print("processing file :" + 's3://parquet-bucket-1/'+ table_list[split_table_list.index(i)] + 'start time : ', datetime_object)
+                                print("processing file :" + 's3://parquet-bucket-1/'+ table_list[split_table_list.index(i)] + 'start time : ', datetime.datetime.now())
 
                                 logger.log("Creating Database Connection")
                                 con = get_db_conn()
@@ -155,7 +156,7 @@ if __name__ == '__main__':
                                 logger.log("Copying completed to redshift for file")
                                 logger.log(table_list[split_table_list.index(i)])
 
-                                print("Data processing completed successfully for file :" + 's3://parquet-bucket-1/' + table_list[split_table_list.index(i)],datetime_object)
+                                print("Data processing completed successfully for file :" + 's3://parquet-bucket-1/' + table_list[split_table_list.index(i)],datetime.datetime.now())
                     else:
 
                         logger.error("Index File Not Present-----!!")
