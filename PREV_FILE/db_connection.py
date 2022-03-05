@@ -13,11 +13,11 @@ logger.info("-------------------------------------------------------Job Started-
 # DB connection
 class DBConnection:
     def __init__(self): ## These values should be read from AWS Secret Manager - In Secret Manager Password and userid should be encrypted form.
-        self.host = "xxxx-ap-south-1-db.cckebez2onwv.ap-south-1.rds.amazonaws.com"
-        self.port = "5432"
-        self.dbname = "webappdb"
-        self.user = "postgres"
-        self.password = "master123"
+        self.host = "redshift-cluster-1.c04kzwicvscs.ap-south-1.redshift.amazonaws.com:5439/dev"
+        self.port = "5439"
+        self.dbname = "dev"
+        self.user = "migration"
+        self.password = "Pratik@2000"
 
     def get_db_connection(self):
         try:

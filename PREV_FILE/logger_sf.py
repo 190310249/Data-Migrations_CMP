@@ -14,7 +14,7 @@ def upload_log(bucket_name):
     folder = 'logfile/' + 'logfile.log'
     s3_client = boto3.client('s3')
     try:
-        s3_client.upload_file('C:\\Users\\sumit\\PycharmProjects\\mysample\\logfile.log', bucket_name, folder)
+        s3_client.upload_file('C:\\Users\\M.PRATIK KUMAR\\OneDrive\\Desktop\\logfile.log', bucket_name, folder)
         logger.info("Log File Uploaded Successfully!!.")
     except Exception as e:
         logger.error("LogFile Uploaded Failed!!.")

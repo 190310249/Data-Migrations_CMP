@@ -1,8 +1,9 @@
 import boto3
 import psycopg2
 import os
-import logging 
-import logging.config
+from logger_sf import *
+from db_connection import *
+
 
 if __name__ == '__main__':
 
@@ -10,11 +11,11 @@ if __name__ == '__main__':
         logger.info("-----AWS S3 Connectivity Intiated-----")
 
         logger.info("Setting Up S3 client")
-        s3_client = boto3.client("s3", region_name='', aws_access_key_id='', aws_secret_access_key='')
+        s3_client = boto3.client("s3", region_name='ap-south-1', aws_access_key_id='AKIASC3QUFY6T3WDXXG6', aws_secret_access_key='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')
 
         logger.info("Setting Up Os.environ")
-        os.environ['aws_access_key_id'] = 'AKIAWJDXUJQ65MVS2OHT'
-        os.environ['aws_secret_access_key'] = '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'
+        os.environ['aws_access_key_id'] = 'AKIASC3QUFY6T3WDXXG6'
+        os.environ['aws_secret_access_key'] = '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'
 
         s3 = boto3.resource('s3')
 
@@ -33,7 +34,7 @@ if __name__ == '__main__':
         #s3 = boto3.resource('s3')
 
         try:
-            if 'index-bucket-sf' and 'parquet-bucket-sf' in s3_bucket:
+            if 'index-bucket-sfs' and 'parquet-bucket-sfs' in s3_bucket:
                 logger.info("index-bucket and parquet-bucket found in the s3_bucket list")
                 index_bucket = s3.Bucket('index-bucket-sf')
                 parquet_bucket1 = s3.Bucket('parquet-bucket-sf')
@@ -85,7 +86,7 @@ if __name__ == '__main__':
                                 print("Parquet file validation will happen")
                                 copy_command = ("COPY global.ecy_job1 FROM " + "'s3://parquet-bucket-1/" + table_list[split_table_list.index(i)][0] + "{}'".format(l[0]) + "IAM_ROLE 'arn:aws:iam::0123456789:role/sf_poc_redshift_role'" + 'FORMAT AS PARQUET;')
 
-                                print("processing file :" + 's3://parquet-bucket-1/'+ table_list[split_table_list.index(i)] + 'start time : ', datetime_object)
+                                print("processing file :" + 's3://parquet-bucket-1/'+ table_list[split_table_list.index(i)] + 'start time : ')
 
                                 logger.log("Creating Database Connection")
                                 con = get_db_conn()
@@ -105,7 +106,7 @@ if __name__ == '__main__':
                                 logger.log("Copying completed to redshift for file")
                                 logger.log(table_list[split_table_list.index(i)])
 
-                                print("Data processing completed successfully for file :" + 's3://parquet-bucket-1/' + table_list[split_table_list.index(i)],datetime_object)
+                                print("Data processing completed successfully for file :" + 's3://parquet-bucket-1/' + table_list[split_table_list.index(i)])
                     else:
 
                         logger.error("Index File Not Present-----!!")
