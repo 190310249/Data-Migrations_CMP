@@ -710,3 +710,273 @@ botocore.exceptions.ClientError: An error occurred (AccessDenied) when calling t
 20  : SFHTC: 2022-03-06 00:43:02,826: LogFile Uploaded Failed!!.
 21  : SFHTC: 2022-03-06 00:43:02,826: Failed to upload C:\\Users\\M.PRATIK KUMAR\\OneDrive\\Desktop\\logfile.log to log-bucket/logfile/logfile.log: An error occurred (AccessDenied) when calling the PutObject operation: Access Denied
 125  : SFHTC: 2022-03-06 00:43:02,826: Job Executed------------------------------------------------------------------------------------------------------------------
+10  : SFHTC: 2022-03-06 17:27:05,730: -------------------------------------------------------Job Started---------------------------------------------------------------------
+11  : SFHTC: 2022-03-06 17:27:05,730: -----AWS S3 Connectivity Intiated-----
+13  : SFHTC: 2022-03-06 17:27:05,730: Setting Up S3 client
+420  : botocore.hooks: 2022-03-06 17:27:05,731: Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+420  : botocore.hooks: 2022-03-06 17:27:05,732: Changing event name from before-call.apigateway to before-call.api-gateway
+420  : botocore.hooks: 2022-03-06 17:27:05,733: Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+420  : botocore.hooks: 2022-03-06 17:27:05,734: Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+420  : botocore.hooks: 2022-03-06 17:27:05,734: Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+420  : botocore.hooks: 2022-03-06 17:27:05,735: Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+420  : botocore.hooks: 2022-03-06 17:27:05,735: Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+420  : botocore.hooks: 2022-03-06 17:27:05,737: Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+420  : botocore.hooks: 2022-03-06 17:27:05,738: Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+420  : botocore.hooks: 2022-03-06 17:27:05,738: Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+420  : botocore.hooks: 2022-03-06 17:27:05,738: Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+175  : botocore.loaders: 2022-03-06 17:27:05,753: Loading JSON file: C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\data\endpoints.json
+175  : botocore.loaders: 2022-03-06 17:27:05,764: Loading JSON file: C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\data\sdk-default-configuration.json
+210  : botocore.hooks: 2022-03-06 17:27:05,787: Event choose-service-name: calling handler <function handle_service_name_alias at 0x000001B0C1198280>
+175  : botocore.loaders: 2022-03-06 17:27:05,969: Loading JSON file: C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\data\s3\2006-03-01\service-2.json
+210  : botocore.hooks: 2022-03-06 17:27:05,978: Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x000001B0C113A320>
+210  : botocore.hooks: 2022-03-06 17:27:05,979: Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x000001B0BE2B3E20>
+210  : botocore.hooks: 2022-03-06 17:27:06,093: Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x000001B0C113A0E0>
+294  : botocore.endpoint: 2022-03-06 17:27:06,095: Setting s3 timeout as (60, 60)
+175  : botocore.loaders: 2022-03-06 17:27:06,109: Loading JSON file: C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\data\_retry.json
+193  : botocore.client: 2022-03-06 17:27:06,109: Registering retry handlers for service: s3
+16  : SFHTC: 2022-03-06 17:27:06,110: Setting Up Os.environ
+175  : botocore.loaders: 2022-03-06 17:27:06,163: Loading JSON file: C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\boto3\data\s3\2006-03-01\resources-1.json
+413  : botocore.utils: 2022-03-06 17:27:06,176: IMDS ENDPOINT: http://169.254.169.254/
+1984  : botocore.credentials: 2022-03-06 17:27:06,177: Looking for credentials via: env
+1111  : botocore.credentials: 2022-03-06 17:27:06,177: Found credentials in environment variables.
+210  : botocore.hooks: 2022-03-06 17:27:06,177: Event choose-service-name: calling handler <function handle_service_name_alias at 0x000001B0C1198280>
+210  : botocore.hooks: 2022-03-06 17:27:06,178: Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x000001B0C113A320>
+210  : botocore.hooks: 2022-03-06 17:27:06,178: Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x000001B0BE2B3E20>
+210  : botocore.hooks: 2022-03-06 17:27:06,178: Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x000001B0C113A0E0>
+294  : botocore.endpoint: 2022-03-06 17:27:06,179: Setting s3 timeout as (60, 60)
+193  : botocore.client: 2022-03-06 17:27:06,180: Registering retry handlers for service: s3
+65  : boto3.resources.factory: 2022-03-06 17:27:06,181: Loading s3:s3
+26  : SFHTC: 2022-03-06 17:27:06,181: checking for all the buckets
+175  : botocore.loaders: 2022-03-06 17:27:06,253: Loading JSON file: C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\data\s3\2006-03-01\paginators-1.json
+158  : boto3.resources.collection: 2022-03-06 17:27:06,254: Calling s3:list_buckets with {}
+210  : botocore.hooks: 2022-03-06 17:27:06,254: Event before-parameter-build.s3.ListBuckets: calling handler <function validate_bucket_name at 0x000001B0C119B640>
+210  : botocore.hooks: 2022-03-06 17:27:06,254: Event before-parameter-build.s3.ListBuckets: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x000001B0C1A3FD30>>
+210  : botocore.hooks: 2022-03-06 17:27:06,254: Event before-parameter-build.s3.ListBuckets: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x000001B0C1A3FD00>>
+210  : botocore.hooks: 2022-03-06 17:27:06,254: Event before-parameter-build.s3.ListBuckets: calling handler <function generate_idempotent_uuid at 0x000001B0C119B490>
+210  : botocore.hooks: 2022-03-06 17:27:06,254: Event before-call.s3.ListBuckets: calling handler <function add_expect_header at 0x000001B0C119B9A0>
+210  : botocore.hooks: 2022-03-06 17:27:06,254: Event before-call.s3.ListBuckets: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x000001B0C1A3FD30>>
+210  : botocore.hooks: 2022-03-06 17:27:06,254: Event before-call.s3.ListBuckets: calling handler <function inject_api_version_header_if_needed at 0x000001B0C11C8D30>
+102  : botocore.endpoint: 2022-03-06 17:27:06,254: Making request for OperationModel(name=ListBuckets) with params: {'url_path': '/', 'query_string': '', 'method': 'GET', 'headers': {'User-Agent': 'Boto3/1.20.41 Python/3.10.2 Windows/10 Botocore/1.23.41 Resource'}, 'body': b'', 'url': 'https://s3.amazonaws.com/', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x000001B0C1A3F280>, 'has_streaming_input': False, 'auth_type': None, 'signing': {'bucket': None}}}
+210  : botocore.hooks: 2022-03-06 17:27:06,255: Event request-created.s3.ListBuckets: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000001B0C1A3F1F0>>
+210  : botocore.hooks: 2022-03-06 17:27:06,255: Event choose-signer.s3.ListBuckets: calling handler <bound method S3EndpointSetter.set_signer of <botocore.utils.S3EndpointSetter object at 0x000001B0C1A3FE20>>
+210  : botocore.hooks: 2022-03-06 17:27:06,255: Event choose-signer.s3.ListBuckets: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x000001B0C1735900>>
+210  : botocore.hooks: 2022-03-06 17:27:06,255: Event choose-signer.s3.ListBuckets: calling handler <function set_operation_specific_signer at 0x000001B0C119B370>
+210  : botocore.hooks: 2022-03-06 17:27:06,255: Event before-sign.s3.ListBuckets: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x000001B0C1A3FE20>>
+2058  : botocore.utils: 2022-03-06 17:27:06,255: Defaulting to S3 virtual host style addressing with path style addressing fallback.
+385  : botocore.auth: 2022-03-06 17:27:06,255: Calculating signature using v4 auth.
+386  : botocore.auth: 2022-03-06 17:27:06,255: CanonicalRequest:
+GET
+/
+
+host:s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20220306T115706Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+388  : botocore.auth: 2022-03-06 17:27:06,255: StringToSign:
+AWS4-HMAC-SHA256
+20220306T115706Z
+20220306/us-east-1/s3/aws4_request
+1247708a6f1f210b0d402eb77522dc7d5b077df857b29f133f99473e756c2619
+390  : botocore.auth: 2022-03-06 17:27:06,256: Signature:
+ea214bcc83f6182c73650578b4dac9af17bfefc082d0af09a1d8f7c363ab34a2
+188  : botocore.endpoint: 2022-03-06 17:27:06,256: Sending http request: <AWSPreparedRequest stream_output=False, method=GET, url=https://s3.amazonaws.com/, headers={'User-Agent': b'Boto3/1.20.41 Python/3.10.2 Windows/10 Botocore/1.23.41 Resource', 'X-Amz-Date': b'20220306T115706Z', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIASC3QUFY6T3WDXXG6/20220306/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=ea214bcc83f6182c73650578b4dac9af17bfefc082d0af09a1d8f7c363ab34a2'}>
+59  : botocore.httpsession: 2022-03-06 17:27:06,258: Certificate path: C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\certifi\cacert.pem
+1001  : urllib3.connectionpool: 2022-03-06 17:27:06,258: Starting new HTTPS connection (1): s3.amazonaws.com:443
+456  : urllib3.connectionpool: 2022-03-06 17:27:07,575: https://s3.amazonaws.com:443 "GET / HTTP/1.1" 200 None
+233  : botocore.parsers: 2022-03-06 17:27:07,575: Response headers: {'x-amz-id-2': 'LmCxbpWTLcknXYNLDKJ1f1E9zhSc5VQIWCUPPpSSQTdmbENxhi+201IpvURMisQdj/CSWSwBtrU=', 'x-amz-request-id': 'SH85Y0M8ZSAW4ZZ3', 'Date': 'Sun, 06 Mar 2022 11:57:10 GMT', 'Content-Type': 'application/xml', 'Transfer-Encoding': 'chunked', 'Server': 'AmazonS3'}
+234  : botocore.parsers: 2022-03-06 17:27:07,575: Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<ListAllMyBucketsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/"><Owner><ID>203d6b8950f40c52fe0b9b1eb76b4974a8482b83cba527ea3ff34e52094e7447</ID><DisplayName>sksuraj148333</DisplayName></Owner><Buckets><Bucket><Name>index-bucket-sfs</Name><CreationDate>2022-03-05T14:03:45.000Z</CreationDate></Bucket><Bucket><Name>parquet-bucket-sfs</Name><CreationDate>2022-03-05T14:05:01.000Z</CreationDate></Bucket><Bucket><Name>portfolio-website-content</Name><CreationDate>2022-02-01T07:15:37.000Z</CreationDate></Bucket><Bucket><Name>testbucketsuraj</Name><CreationDate>2022-03-05T17:20:41.000Z</CreationDate></Bucket></Buckets></ListAllMyBucketsResult>'
+210  : botocore.hooks: 2022-03-06 17:27:07,575: Event needs-retry.s3.ListBuckets: calling handler <botocore.retryhandler.RetryHandler object at 0x000001B0C1A3FC70>
+187  : botocore.retryhandler: 2022-03-06 17:27:07,575: No retry needed.
+210  : botocore.hooks: 2022-03-06 17:27:07,575: Event needs-retry.s3.ListBuckets: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x000001B0C1A3FD30>>
+65  : boto3.resources.factory: 2022-03-06 17:27:07,576: Loading s3:Bucket
+358  : boto3.resources.model: 2022-03-06 17:27:07,576: Renaming Bucket attribute name
+210  : botocore.hooks: 2022-03-06 17:27:07,576: Event creating-resource-class.s3.Bucket: calling handler <function lazy_call.<locals>._handler at 0x000001B0C129A8C0>
+29  : SFHTC: 2022-03-06 17:27:07,577: Appended all the buckets to s3_bucket list
+29  : SFHTC: 2022-03-06 17:27:07,577: Appended all the buckets to s3_bucket list
+29  : SFHTC: 2022-03-06 17:27:07,577: Appended all the buckets to s3_bucket list
+29  : SFHTC: 2022-03-06 17:27:07,577: Appended all the buckets to s3_bucket list
+38  : SFHTC: 2022-03-06 17:27:07,577: index-bucket and parquet-bucket found in the s3_bucket list
+65  : boto3.resources.factory: 2022-03-06 17:27:07,577: Loading s3:Bucket
+358  : boto3.resources.model: 2022-03-06 17:27:07,577: Renaming Bucket attribute name
+210  : botocore.hooks: 2022-03-06 17:27:07,577: Event creating-resource-class.s3.Bucket: calling handler <function lazy_call.<locals>._handler at 0x000001B0C129A8C0>
+65  : boto3.resources.factory: 2022-03-06 17:27:07,577: Loading s3:Bucket
+358  : boto3.resources.model: 2022-03-06 17:27:07,577: Renaming Bucket attribute name
+210  : botocore.hooks: 2022-03-06 17:27:07,578: Event creating-resource-class.s3.Bucket: calling handler <function lazy_call.<locals>._handler at 0x000001B0C129A8C0>
+45  : SFHTC: 2022-03-06 17:27:07,578: Checking for parquet file and table
+150  : boto3.resources.collection: 2022-03-06 17:27:07,578: Calling paginated s3:list_objects with {'Bucket': 'parquet-bucket-sf'}
+210  : botocore.hooks: 2022-03-06 17:27:07,578: Event before-parameter-build.s3.ListObjects: calling handler <function set_list_objects_encoding_type_url at 0x000001B0C11C8940>
+210  : botocore.hooks: 2022-03-06 17:27:07,579: Event before-parameter-build.s3.ListObjects: calling handler <function validate_bucket_name at 0x000001B0C119B640>
+210  : botocore.hooks: 2022-03-06 17:27:07,579: Event before-parameter-build.s3.ListObjects: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x000001B0C1A3FD30>>
+210  : botocore.hooks: 2022-03-06 17:27:07,579: Event before-parameter-build.s3.ListObjects: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x000001B0C1A3FD00>>
+210  : botocore.hooks: 2022-03-06 17:27:07,579: Event before-parameter-build.s3.ListObjects: calling handler <function generate_idempotent_uuid at 0x000001B0C119B490>
+210  : botocore.hooks: 2022-03-06 17:27:07,579: Event before-call.s3.ListObjects: calling handler <function add_expect_header at 0x000001B0C119B9A0>
+210  : botocore.hooks: 2022-03-06 17:27:07,579: Event before-call.s3.ListObjects: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x000001B0C1A3FD30>>
+210  : botocore.hooks: 2022-03-06 17:27:07,579: Event before-call.s3.ListObjects: calling handler <function inject_api_version_header_if_needed at 0x000001B0C11C8D30>
+102  : botocore.endpoint: 2022-03-06 17:27:07,579: Making request for OperationModel(name=ListObjects) with params: {'url_path': '/parquet-bucket-sf', 'query_string': {'encoding-type': 'url'}, 'method': 'GET', 'headers': {'User-Agent': 'Boto3/1.20.41 Python/3.10.2 Windows/10 Botocore/1.23.41 Resource'}, 'body': b'', 'url': 'https://s3.amazonaws.com/parquet-bucket-sf?encoding-type=url', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x000001B0C1A3F280>, 'has_streaming_input': False, 'auth_type': None, 'encoding_type_auto_set': True, 'signing': {'bucket': 'parquet-bucket-sf'}}}
+210  : botocore.hooks: 2022-03-06 17:27:07,579: Event request-created.s3.ListObjects: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000001B0C1A3F1F0>>
+210  : botocore.hooks: 2022-03-06 17:27:07,580: Event choose-signer.s3.ListObjects: calling handler <bound method S3EndpointSetter.set_signer of <botocore.utils.S3EndpointSetter object at 0x000001B0C1A3FE20>>
+210  : botocore.hooks: 2022-03-06 17:27:07,580: Event choose-signer.s3.ListObjects: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x000001B0C1735900>>
+210  : botocore.hooks: 2022-03-06 17:27:07,580: Event choose-signer.s3.ListObjects: calling handler <function set_operation_specific_signer at 0x000001B0C119B370>
+210  : botocore.hooks: 2022-03-06 17:27:07,580: Event before-sign.s3.ListObjects: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x000001B0C1A3FE20>>
+1261  : botocore.utils: 2022-03-06 17:27:07,580: Checking for DNS compatible bucket for: https://s3.amazonaws.com/parquet-bucket-sf?encoding-type=url
+1280  : botocore.utils: 2022-03-06 17:27:07,580: URI updated to: https://parquet-bucket-sf.s3.amazonaws.com/?encoding-type=url
+385  : botocore.auth: 2022-03-06 17:27:07,580: Calculating signature using v4 auth.
+386  : botocore.auth: 2022-03-06 17:27:07,580: CanonicalRequest:
+GET
+/
+encoding-type=url
+host:parquet-bucket-sf.s3.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20220306T115707Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+388  : botocore.auth: 2022-03-06 17:27:07,580: StringToSign:
+AWS4-HMAC-SHA256
+20220306T115707Z
+20220306/us-east-1/s3/aws4_request
+0ee7a2c05ad745875582eab3e9f714fc2c91ca984b8d7cad7ed111f3702c728a
+390  : botocore.auth: 2022-03-06 17:27:07,580: Signature:
+a0f8a62528fef6434944d1fc926b499bc7c5a4e808523d2306d6db7041cce7fa
+188  : botocore.endpoint: 2022-03-06 17:27:07,580: Sending http request: <AWSPreparedRequest stream_output=False, method=GET, url=https://parquet-bucket-sf.s3.amazonaws.com/?encoding-type=url, headers={'User-Agent': b'Boto3/1.20.41 Python/3.10.2 Windows/10 Botocore/1.23.41 Resource', 'X-Amz-Date': b'20220306T115707Z', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIASC3QUFY6T3WDXXG6/20220306/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=a0f8a62528fef6434944d1fc926b499bc7c5a4e808523d2306d6db7041cce7fa'}>
+59  : botocore.httpsession: 2022-03-06 17:27:07,581: Certificate path: C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\certifi\cacert.pem
+1001  : urllib3.connectionpool: 2022-03-06 17:27:07,581: Starting new HTTPS connection (1): parquet-bucket-sf.s3.amazonaws.com:443
+456  : urllib3.connectionpool: 2022-03-06 17:27:08,121: https://parquet-bucket-sf.s3.amazonaws.com:443 "GET /?encoding-type=url HTTP/1.1" 400 None
+233  : botocore.parsers: 2022-03-06 17:27:08,121: Response headers: {'x-amz-bucket-region': 'ap-south-1', 'x-amz-request-id': 'SH80YYKJ89KJMPR4', 'x-amz-id-2': 'v43aLjNb8PGzI2bwEQYqLabY4Ybv/x89GBXdi+G8moVRo/ho0i6jAeib6F3qAzNeVn/3xD0LduI=', 'Content-Type': 'application/xml', 'Transfer-Encoding': 'chunked', 'Date': 'Sun, 06 Mar 2022 11:57:09 GMT', 'Server': 'AmazonS3', 'Connection': 'close'}
+234  : botocore.parsers: 2022-03-06 17:27:08,122: Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<Error><Code>AuthorizationHeaderMalformed</Code><Message>The authorization header is malformed; the region \'us-east-1\' is wrong; expecting \'ap-south-1\'</Message><Region>ap-south-1</Region><RequestId>SH80YYKJ89KJMPR4</RequestId><HostId>v43aLjNb8PGzI2bwEQYqLabY4Ybv/x89GBXdi+G8moVRo/ho0i6jAeib6F3qAzNeVn/3xD0LduI=</HostId></Error>'
+210  : botocore.hooks: 2022-03-06 17:27:08,125: Event needs-retry.s3.ListObjects: calling handler <botocore.retryhandler.RetryHandler object at 0x000001B0C1A3FC70>
+187  : botocore.retryhandler: 2022-03-06 17:27:08,125: No retry needed.
+210  : botocore.hooks: 2022-03-06 17:27:08,125: Event needs-retry.s3.ListObjects: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x000001B0C1A3FD30>>
+1480  : botocore.utils: 2022-03-06 17:27:08,125: S3 client configured for region us-east-1 but the bucket parquet-bucket-sf is in region ap-south-1; Please configure the proper region to avoid multiple unnecessary redirects and signing attempts.
+1368  : botocore.utils: 2022-03-06 17:27:08,125: Updating URI from https://s3.amazonaws.com/parquet-bucket-sf?encoding-type=url to https://s3.ap-south-1.amazonaws.com/parquet-bucket-sf?encoding-type=url
+264  : botocore.endpoint: 2022-03-06 17:27:08,125: Response received to retry, sleeping for 0 seconds
+210  : botocore.hooks: 2022-03-06 17:27:08,126: Event request-created.s3.ListObjects: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000001B0C1A3F1F0>>
+210  : botocore.hooks: 2022-03-06 17:27:08,126: Event choose-signer.s3.ListObjects: calling handler <bound method S3EndpointSetter.set_signer of <botocore.utils.S3EndpointSetter object at 0x000001B0C1A3FE20>>
+210  : botocore.hooks: 2022-03-06 17:27:08,126: Event choose-signer.s3.ListObjects: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x000001B0C1735900>>
+210  : botocore.hooks: 2022-03-06 17:27:08,126: Event choose-signer.s3.ListObjects: calling handler <function set_operation_specific_signer at 0x000001B0C119B370>
+210  : botocore.hooks: 2022-03-06 17:27:08,126: Event before-sign.s3.ListObjects: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x000001B0C1A3FE20>>
+1261  : botocore.utils: 2022-03-06 17:27:08,126: Checking for DNS compatible bucket for: https://s3.ap-south-1.amazonaws.com/parquet-bucket-sf?encoding-type=url
+1280  : botocore.utils: 2022-03-06 17:27:08,126: URI updated to: https://parquet-bucket-sf.s3.ap-south-1.amazonaws.com/?encoding-type=url
+385  : botocore.auth: 2022-03-06 17:27:08,126: Calculating signature using v4 auth.
+386  : botocore.auth: 2022-03-06 17:27:08,127: CanonicalRequest:
+GET
+/
+encoding-type=url
+host:parquet-bucket-sf.s3.ap-south-1.amazonaws.com
+x-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+x-amz-date:20220306T115708Z
+
+host;x-amz-content-sha256;x-amz-date
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+388  : botocore.auth: 2022-03-06 17:27:08,127: StringToSign:
+AWS4-HMAC-SHA256
+20220306T115708Z
+20220306/ap-south-1/s3/aws4_request
+350b7da12947bd37213dc702850746c92cc3cf837cb10f957988e158a458905a
+390  : botocore.auth: 2022-03-06 17:27:08,127: Signature:
+1ac81b9471da5fb21bb05d4ac5bbb4508bf45d6304adac857a2396520e12d489
+188  : botocore.endpoint: 2022-03-06 17:27:08,127: Sending http request: <AWSPreparedRequest stream_output=False, method=GET, url=https://parquet-bucket-sf.s3.ap-south-1.amazonaws.com/?encoding-type=url, headers={'User-Agent': b'Boto3/1.20.41 Python/3.10.2 Windows/10 Botocore/1.23.41 Resource', 'X-Amz-Date': b'20220306T115708Z', 'X-Amz-Content-SHA256': b'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIASC3QUFY6T3WDXXG6/20220306/ap-south-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date, Signature=1ac81b9471da5fb21bb05d4ac5bbb4508bf45d6304adac857a2396520e12d489'}>
+59  : botocore.httpsession: 2022-03-06 17:27:08,127: Certificate path: C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\certifi\cacert.pem
+1001  : urllib3.connectionpool: 2022-03-06 17:27:08,128: Starting new HTTPS connection (1): parquet-bucket-sf.s3.ap-south-1.amazonaws.com:443
+456  : urllib3.connectionpool: 2022-03-06 17:27:08,685: https://parquet-bucket-sf.s3.ap-south-1.amazonaws.com:443 "GET /?encoding-type=url HTTP/1.1" 403 None
+233  : botocore.parsers: 2022-03-06 17:27:08,688: Response headers: {'x-amz-bucket-region': 'ap-south-1', 'x-amz-request-id': 'TWE6S0Z494K0CGM4', 'x-amz-id-2': '5UNrK87UfB4RVCFVg9aENwpIHKy48pjvovxI3JHmF/7l8pGEqKA45O9U6H12RbsMndip+iuz3jQ=', 'Content-Type': 'application/xml', 'Transfer-Encoding': 'chunked', 'Date': 'Sun, 06 Mar 2022 11:57:09 GMT', 'Server': 'AmazonS3'}
+234  : botocore.parsers: 2022-03-06 17:27:08,688: Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<Error><Code>AccessDenied</Code><Message>Access Denied</Message><RequestId>TWE6S0Z494K0CGM4</RequestId><HostId>5UNrK87UfB4RVCFVg9aENwpIHKy48pjvovxI3JHmF/7l8pGEqKA45O9U6H12RbsMndip+iuz3jQ=</HostId></Error>'
+210  : botocore.hooks: 2022-03-06 17:27:08,689: Event needs-retry.s3.ListObjects: calling handler <botocore.retryhandler.RetryHandler object at 0x000001B0C1A3FC70>
+187  : botocore.retryhandler: 2022-03-06 17:27:08,689: No retry needed.
+210  : botocore.hooks: 2022-03-06 17:27:08,689: Event needs-retry.s3.ListObjects: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x000001B0C1A3FD30>>
+1436  : botocore.utils: 2022-03-06 17:27:08,689: S3 request was previously redirected, not redirecting.
+210  : botocore.hooks: 2022-03-06 17:27:08,689: Event after-call.s3.ListObjects: calling handler <function decode_list_object at 0x000001B0C11C89D0>
+118  : SFHTC: 2022-03-06 17:27:08,689: Something went wrong while processing index and parquet bucket----->
+13  : SFHTC: 2022-03-06 17:27:08,689: Inside upload_log function
+210  : botocore.hooks: 2022-03-06 17:27:08,689: Event choose-service-name: calling handler <function handle_service_name_alias at 0x000001B0C1198280>
+210  : botocore.hooks: 2022-03-06 17:27:08,690: Event creating-client-class.s3: calling handler <function add_generate_presigned_post at 0x000001B0C113A320>
+210  : botocore.hooks: 2022-03-06 17:27:08,690: Event creating-client-class.s3: calling handler <function lazy_call.<locals>._handler at 0x000001B0BE2B3E20>
+210  : botocore.hooks: 2022-03-06 17:27:08,690: Event creating-client-class.s3: calling handler <function add_generate_presigned_url at 0x000001B0C113A0E0>
+294  : botocore.endpoint: 2022-03-06 17:27:08,692: Setting s3 timeout as (60, 60)
+193  : botocore.client: 2022-03-06 17:27:08,693: Registering retry handlers for service: s3
+599  : s3transfer.utils: 2022-03-06 17:27:08,694: Acquiring 0
+193  : s3transfer.tasks: 2022-03-06 17:27:08,694: UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x000001B0C1B7C760>}) about to wait for the following futures []
+203  : s3transfer.tasks: 2022-03-06 17:27:08,694: UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x000001B0C1B7C760>}) done waiting for dependent futures
+146  : s3transfer.tasks: 2022-03-06 17:27:08,695: Executing task UploadSubmissionTask(transfer_id=0, {'transfer_future': <s3transfer.futures.TransferFuture object at 0x000001B0C1B7C760>}) with kwargs {'client': <botocore.client.S3 object at 0x000001B0C1B52E00>, 'config': <boto3.s3.transfer.TransferConfig object at 0x000001B0C1B53B20>, 'osutil': <s3transfer.utils.OSUtils object at 0x000001B0C1B53AF0>, 'request_executor': <s3transfer.futures.BoundedExecutor object at 0x000001B0C1B53D60>, 'transfer_future': <s3transfer.futures.TransferFuture object at 0x000001B0C1B7C760>}
+316  : s3transfer.futures: 2022-03-06 17:27:08,695: Submitting task PutObjectTask(transfer_id=0, {'bucket': 'log-bucket', 'key': 'logfile/logfile.log', 'extra_args': {}}) to executor <s3transfer.futures.BoundedExecutor object at 0x000001B0C1B53D60> for transfer request: 0.
+599  : s3transfer.utils: 2022-03-06 17:27:08,695: Acquiring 0
+193  : s3transfer.tasks: 2022-03-06 17:27:08,695: PutObjectTask(transfer_id=0, {'bucket': 'log-bucket', 'key': 'logfile/logfile.log', 'extra_args': {}}) about to wait for the following futures []
+612  : s3transfer.utils: 2022-03-06 17:27:08,696: Releasing acquire 0/None
+203  : s3transfer.tasks: 2022-03-06 17:27:08,696: PutObjectTask(transfer_id=0, {'bucket': 'log-bucket', 'key': 'logfile/logfile.log', 'extra_args': {}}) done waiting for dependent futures
+146  : s3transfer.tasks: 2022-03-06 17:27:08,696: Executing task PutObjectTask(transfer_id=0, {'bucket': 'log-bucket', 'key': 'logfile/logfile.log', 'extra_args': {}}) with kwargs {'client': <botocore.client.S3 object at 0x000001B0C1B52E00>, 'fileobj': <s3transfer.utils.ReadFileChunk object at 0x000001B0C1B7CCD0>, 'bucket': 'log-bucket', 'key': 'logfile/logfile.log', 'extra_args': {}}
+210  : botocore.hooks: 2022-03-06 17:27:08,696: Event before-parameter-build.s3.PutObject: calling handler <function validate_ascii_metadata at 0x000001B0C11C8310>
+210  : botocore.hooks: 2022-03-06 17:27:08,696: Event before-parameter-build.s3.PutObject: calling handler <function sse_md5 at 0x000001B0C119B6D0>
+210  : botocore.hooks: 2022-03-06 17:27:08,696: Event before-parameter-build.s3.PutObject: calling handler <function convert_body_to_file_like_object at 0x000001B0C11C8C10>
+210  : botocore.hooks: 2022-03-06 17:27:08,696: Event before-parameter-build.s3.PutObject: calling handler <function validate_bucket_name at 0x000001B0C119B640>
+210  : botocore.hooks: 2022-03-06 17:27:08,697: Event before-parameter-build.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_cache of <botocore.utils.S3RegionRedirector object at 0x000001B0C1B539D0>>
+210  : botocore.hooks: 2022-03-06 17:27:08,697: Event before-parameter-build.s3.PutObject: calling handler <bound method S3ArnParamHandler.handle_arn of <botocore.utils.S3ArnParamHandler object at 0x000001B0C1B539A0>>
+210  : botocore.hooks: 2022-03-06 17:27:08,697: Event before-parameter-build.s3.PutObject: calling handler <function generate_idempotent_uuid at 0x000001B0C119B490>
+210  : botocore.hooks: 2022-03-06 17:27:08,697: Event before-call.s3.PutObject: calling handler <function conditionally_calculate_md5 at 0x000001B0C1030D30>
+210  : botocore.hooks: 2022-03-06 17:27:08,697: Event before-call.s3.PutObject: calling handler <function add_expect_header at 0x000001B0C119B9A0>
+305  : botocore.handlers: 2022-03-06 17:27:08,697: Adding expect 100 continue header to request.
+210  : botocore.hooks: 2022-03-06 17:27:08,697: Event before-call.s3.PutObject: calling handler <bound method S3RegionRedirector.set_request_url of <botocore.utils.S3RegionRedirector object at 0x000001B0C1B539D0>>
+210  : botocore.hooks: 2022-03-06 17:27:08,697: Event before-call.s3.PutObject: calling handler <function inject_api_version_header_if_needed at 0x000001B0C11C8D30>
+102  : botocore.endpoint: 2022-03-06 17:27:08,698: Making request for OperationModel(name=PutObject) with params: {'url_path': '/log-bucket/logfile/logfile.log', 'query_string': {}, 'method': 'PUT', 'headers': {'User-Agent': 'Boto3/1.20.41 Python/3.10.2 Windows/10 Botocore/1.23.41', 'Content-MD5': '1B2M2Y8AsgTpgAmY7PhCfg==', 'Expect': '100-continue'}, 'body': <s3transfer.utils.ReadFileChunk object at 0x000001B0C1B7CCD0>, 'url': 'https://s3.amazonaws.com/log-bucket/logfile/logfile.log', 'context': {'client_region': 'us-east-1', 'client_config': <botocore.config.Config object at 0x000001B0C1B52EF0>, 'has_streaming_input': True, 'auth_type': None, 'signing': {'bucket': 'log-bucket'}}}
+210  : botocore.hooks: 2022-03-06 17:27:08,698: Event request-created.s3.PutObject: calling handler <function signal_not_transferring at 0x000001B0C16E5090>
+210  : botocore.hooks: 2022-03-06 17:27:08,699: Event request-created.s3.PutObject: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000001B0C1B52EC0>>
+210  : botocore.hooks: 2022-03-06 17:27:08,699: Event choose-signer.s3.PutObject: calling handler <bound method S3EndpointSetter.set_signer of <botocore.utils.S3EndpointSetter object at 0x000001B0C1B53AC0>>
+210  : botocore.hooks: 2022-03-06 17:27:08,699: Event choose-signer.s3.PutObject: calling handler <bound method ClientCreator._default_s3_presign_to_sigv2 of <botocore.client.ClientCreator object at 0x000001B0C1B18D60>>
+210  : botocore.hooks: 2022-03-06 17:27:08,699: Event choose-signer.s3.PutObject: calling handler <function set_operation_specific_signer at 0x000001B0C119B370>
+210  : botocore.hooks: 2022-03-06 17:27:08,699: Event before-sign.s3.PutObject: calling handler <bound method S3EndpointSetter.set_endpoint of <botocore.utils.S3EndpointSetter object at 0x000001B0C1B53AC0>>
+2058  : botocore.utils: 2022-03-06 17:27:08,699: Defaulting to S3 virtual host style addressing with path style addressing fallback.
+1261  : botocore.utils: 2022-03-06 17:27:08,699: Checking for DNS compatible bucket for: https://s3.amazonaws.com/log-bucket/logfile/logfile.log
+1280  : botocore.utils: 2022-03-06 17:27:08,699: URI updated to: https://log-bucket.s3.amazonaws.com/logfile/logfile.log
+385  : botocore.auth: 2022-03-06 17:27:08,699: Calculating signature using v4 auth.
+386  : botocore.auth: 2022-03-06 17:27:08,699: CanonicalRequest:
+PUT
+/logfile/logfile.log
+
+content-md5:1B2M2Y8AsgTpgAmY7PhCfg==
+host:log-bucket.s3.amazonaws.com
+x-amz-content-sha256:UNSIGNED-PAYLOAD
+x-amz-date:20220306T115708Z
+
+content-md5;host;x-amz-content-sha256;x-amz-date
+UNSIGNED-PAYLOAD
+388  : botocore.auth: 2022-03-06 17:27:08,699: StringToSign:
+AWS4-HMAC-SHA256
+20220306T115708Z
+20220306/us-east-1/s3/aws4_request
+dc021c77773b57514b08b83d41d9cca62ff1b67ce7d8a5a11db5c4fd369414bf
+390  : botocore.auth: 2022-03-06 17:27:08,699: Signature:
+2170616455daad6e49c6910de35fad532d046c459a322e14e7812d2c35675828
+210  : botocore.hooks: 2022-03-06 17:27:08,699: Event request-created.s3.PutObject: calling handler <function signal_transferring at 0x000001B0C16E5120>
+188  : botocore.endpoint: 2022-03-06 17:27:08,700: Sending http request: <AWSPreparedRequest stream_output=False, method=PUT, url=https://log-bucket.s3.amazonaws.com/logfile/logfile.log, headers={'User-Agent': b'Boto3/1.20.41 Python/3.10.2 Windows/10 Botocore/1.23.41', 'Content-MD5': b'1B2M2Y8AsgTpgAmY7PhCfg==', 'Expect': b'100-continue', 'X-Amz-Date': b'20220306T115708Z', 'X-Amz-Content-SHA256': b'UNSIGNED-PAYLOAD', 'Authorization': b'AWS4-HMAC-SHA256 Credential=AKIASC3QUFY6T3WDXXG6/20220306/us-east-1/s3/aws4_request, SignedHeaders=content-md5;host;x-amz-content-sha256;x-amz-date, Signature=2170616455daad6e49c6910de35fad532d046c459a322e14e7812d2c35675828', 'Content-Length': '0'}>
+59  : botocore.httpsession: 2022-03-06 17:27:08,700: Certificate path: C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\certifi\cacert.pem
+1001  : urllib3.connectionpool: 2022-03-06 17:27:08,700: Starting new HTTPS connection (1): log-bucket.s3.amazonaws.com:443
+124  : botocore.awsrequest: 2022-03-06 17:27:09,752: Waiting for 100 Continue response.
+184  : botocore.awsrequest: 2022-03-06 17:27:10,084: Received a non 100 Continue response from the server, NOT sending request body.
+456  : urllib3.connectionpool: 2022-03-06 17:27:10,085: https://log-bucket.s3.amazonaws.com:443 "PUT /logfile/logfile.log HTTP/1.1" 403 None
+233  : botocore.parsers: 2022-03-06 17:27:10,085: Response headers: {'x-amz-request-id': 'EN522A07A32PPCA8', 'x-amz-id-2': '7WWuXME23QWkEkClltochxLDGoESMRcFgmq0ZBXYLkAez7PyEIz18vnSdmUD+7oobL4Fp+fVzpg=', 'Content-Type': 'application/xml', 'Transfer-Encoding': 'chunked', 'Date': 'Sun, 06 Mar 2022 11:57:11 GMT', 'Server': 'AmazonS3', 'Connection': 'close'}
+234  : botocore.parsers: 2022-03-06 17:27:10,085: Response body:
+b'<?xml version="1.0" encoding="UTF-8"?>\n<Error><Code>AccessDenied</Code><Message>Access Denied</Message><RequestId>EN522A07A32PPCA8</RequestId><HostId>7WWuXME23QWkEkClltochxLDGoESMRcFgmq0ZBXYLkAez7PyEIz18vnSdmUD+7oobL4Fp+fVzpg=</HostId></Error>'
+210  : botocore.hooks: 2022-03-06 17:27:10,089: Event needs-retry.s3.PutObject: calling handler <botocore.retryhandler.RetryHandler object at 0x000001B0C1B53910>
+187  : botocore.retryhandler: 2022-03-06 17:27:10,089: No retry needed.
+210  : botocore.hooks: 2022-03-06 17:27:10,089: Event needs-retry.s3.PutObject: calling handler <bound method S3RegionRedirector.redirect_from_error of <botocore.utils.S3RegionRedirector object at 0x000001B0C1B539D0>>
+160  : s3transfer.tasks: 2022-03-06 17:27:10,090: Exception raised.
+Traceback (most recent call last):
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\s3transfer\tasks.py", line 126, in __call__
+    return self._execute_main(kwargs)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\s3transfer\tasks.py", line 150, in _execute_main
+    return_value = self._main(**kwargs)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\s3transfer\upload.py", line 694, in _main
+    client.put_object(Bucket=bucket, Key=key, Body=body, **extra_args)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\client.py", line 391, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\client.py", line 719, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (AccessDenied) when calling the PutObject operation: Access Denied
+612  : s3transfer.utils: 2022-03-06 17:27:10,097: Releasing acquire 0/None
+20  : SFHTC: 2022-03-06 17:27:10,097: LogFile Uploaded Failed!!.
+21  : SFHTC: 2022-03-06 17:27:10,097: Failed to upload C:\\Users\\M.PRATIK KUMAR\\OneDrive\\Desktop\\logfile.log to log-bucket/logfile/logfile.log: An error occurred (AccessDenied) when calling the PutObject operation: Access Denied
+125  : SFHTC: 2022-03-06 17:27:10,098: Job Executed------------------------------------------------------------------------------------------------------------------
