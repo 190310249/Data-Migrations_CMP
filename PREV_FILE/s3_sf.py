@@ -8,6 +8,8 @@ from db_connection import *
 import json
 from botocore.exceptions import ClientError
 from logging import *
+import os
+
 
 LOG_FORMAT = '{lineno}  : {name}: {asctime}: {message}'
 basicConfig(filename='logfile.log',level=DEBUG, filemode = 'a',style='{',format=LOG_FORMAT)
