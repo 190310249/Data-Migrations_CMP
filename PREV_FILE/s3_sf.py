@@ -1,8 +1,14 @@
 import boto3
 import psycopg2
 import os
+import redshift_connector
+import base64
 from logger_sf import *
 from db_connection import *
+import json
+from botocore.exceptions import ClientError
+from logging import *
+
 
 
 if __name__ == '__main__':
