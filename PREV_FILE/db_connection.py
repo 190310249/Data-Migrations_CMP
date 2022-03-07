@@ -13,32 +13,81 @@ LOG_FORMAT = '{lineno}  : {name}: {asctime}: {message}'
 basicConfig(filename='logfile.log',level=DEBUG, filemode = 'a',style='{',format=LOG_FORMAT)
 logger = getLogger('SFHTC')
 
-logger.info("-------------------------------------------------------Job Started---------------------------------------------------------------------")
+#-----------------------------------------------------------------------------------------------------------------------
+
+def get_secret():
+
+    secret_name = "arn:aws:secretsmanager:ap-south-1:143580737085:secret:migrationsecret-yJlTOZ"
+    region_name = "ap-south-1"
+
+    # Create a Secrets Manager client
+    session = boto3.session.Session()
+    client = session.client(
+        service_name='secretsmanager',
+        region_name=region_name
+    )
+    try:
+        get_secret_value_response = client.get_secret_value(
+            SecretId=secret_name
+        )
+    except ClientError as e:
+        if e.response['Error']['Code'] == 'DecryptionFailureException':
+            raise e
+        elif e.response['Error']['Code'] == 'InternalServiceErrorException':
+            raise e
+        elif e.response['Error']['Code'] == 'InvalidParameterException':
+            raise e
+        elif e.response['Error']['Code'] == 'InvalidRequestException':
+            raise e
+        elif e.response['Error']['Code'] == 'ResourceNotFoundException':
+            raise e
+    else:
+        if 'SecretString' in get_secret_value_response:
+            secret = get_secret_value_response['SecretString']
+            return secret
+        else:
+            decoded_binary_secret = base64.b64decode(get_secret_value_response['SecretBinary'])
+            return decoded_binary_secret
+
 
 #-----------------------------------------------------------------------------------------------------------------------
 # DB connection
 class DBConnection:
-    def __init__(self): ## These values should be read from AWS Secret Manager - In Secret Manager Password and userid should be encrypted form.
-        self.host = "redshift-cluster-1.c04kzwicvscs.ap-south-1.redshift.amazonaws.com:5439/dev"
-        self.port = "5439"
+    def __init__(self, secrets): ## These values should be read from AWS Secret Manager - In Secret Manager Password and userid should be encrypted form.
+        # self.host = "redshift-cluster-1.c04kzwicvscs.ap-south-1.redshift.amazonaws.com"
+        # self.port = "5439"
+        # self.dbname = "dev"
+        # self.user = "awsuser"
+        # self.password = "MNTHfyget1-"
+        self.host = secrets["host"]
+        self.port = str(secrets["port"])
         self.dbname = "dev"
-        self.user = "migration"
-        self.password = "Pratik@2000"
+        self.user = secrets["username"]
+        self.password = secrets["password"]
+
 
     def get_db_connection(self):
         try:
-            db_conn = psycopg2.connect(host=self.host, port=self.port, dbname=self.dbname, user=self.user,password=self.password)
+            # db_conn = psycopg2.connect(host=self.host, port=self.port, dbname=self.dbname, user=self.user,password=self.password)
+            db_conn = redshift_connector.connect(
+                        host=self.host,
+                        database=self.dbname,
+                        user=self.user,
+                        password=self.password
+            )
             logger.info("DB Connection Successful")
+            print("Db connection established")
             db_conn.autocommit = True
             return db_conn
         except Exception as e:
             #print("Exception in DB connection", e)
             logger.critical("Exception in DB Connection")
+            print(e)
+            # print("Db connection failed")
             logger.error(e)
 
-def get_db_conn():
+def get_db_conn(secrets):
     logger.info("Inside get_db_conn")
-    postgres_db = DBConnection()
+    postgres_db = DBConnection(secrets)
     db_conn = postgres_db.get_db_connection()
-
-    return db_conn
+    return 
