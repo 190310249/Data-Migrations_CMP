@@ -12,17 +12,20 @@ from logging import *
 LOG_FORMAT = '{lineno}  : {name}: {asctime}: {message}'
 basicConfig(filename='logfile.log',level=DEBUG, filemode = 'a',style='{',format=LOG_FORMAT)
 logger = getLogger('SFHTC')
-
+os.environ['aws_access_key_id'] = 'AKIASC3QUFY6SICETLNP'
+os.environ['aws_secret_access_key'] = 'SsC4FkH6zcMfjqpyu1ZgJjGJAoSVu1cRlyGJi0Ps'
+secrets = get_secret()
+secrets = secrets.replace("\n", "")
+secrets = secrets.replace(" ", "")
+secrets = json.loads(secrets)
 
 
 if __name__ == '__main__':
-    try:
+    try:        
         logger.info("-----AWS S3 Connectivity Intiated-----")
         logger.info("Setting Up S3 client")
-        s3_client = boto3.client("s3", region_name='ap-south-1', aws_access_key_id='AKIASC3QUFY6SICETLNP', aws_secret_access_key='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')
-        logger.info("Setting Up Os.environ")
-        os.environ['aws_access_key_id'] = 'AKIASC3QUFY6SICETLNP'
-        os.environ['aws_secret_access_key'] = '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'
+        s3_client = boto3.client("s3", region_name=secrets["region_name"], aws_access_key_id=secrets["aws_access_key_id"], aws_secret_access_key=secrets["aws_secret_access_key"])
+        logger.info("Setting Up Os.environ")        
         s3 = boto3.resource('s3')
 
         def upload_log(bucket_name):
@@ -54,6 +57,7 @@ if __name__ == '__main__':
                 # parquet_bucket1 = s3.Bucket('parquet-bucket-sfs')
                 #code for accessing tablename in bucket goes here.
                 #copy_command to copy to db, can be modified according to use.
+
                 copy_command = ("COPY table_1 FROM 's3://parquet-bucket-sfs/table_1/userdata8.parquet' IAM_ROLE 'arn:aws:iam::143580737085:role/migrationrole' FORMAT AS PARQUET;")
                 print("Db connection started")
                 # logger.log("Creating Database Connection")

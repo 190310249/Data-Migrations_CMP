@@ -17,7 +17,7 @@ logger = getLogger('SFHTC')
 
 def get_secret():
 
-    secret_name = "arn:aws:secretsmanager:ap-south-1:143580737085:secret:migrationsecret-yJlTOZ"
+    secret_name = "arn:aws:secretsmanager:ap-south-1:143580737085:secret:Betasecret-YGtgyr"
     region_name = "ap-south-1"
 
     # Create a Secrets Manager client
