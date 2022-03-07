@@ -130,17 +130,16 @@ if __name__ == '__main__':
                                 print("Parquet file validation will happen")
                                 table = split_table[i]
                                 parquet_buck = table_list[i]
-                                # print(table,':',parquet_buck)
+                                print(table,':',parquet_buck)
                                 copy_command = ('"'+'COPY '+table+ ' FROM '+'s3://parquet-bucket-sfs/'+parquet_buck+' IAM_ROLE arn:aws:iam::143580737085:role/migrationrole'+' FORMAT AS PARQUET;'+'"')
-                                # print(copy_command)
+                                print(copy_command)
                                 print("Db connection started 111")
-                                logger.log("Creating Database Connection") # CODE NOT EXECUTED
+                                # logger.log("Creating Database Connection") # CODE NOT EXECUTED
                                 secrets = get_secret()                                
                                 secrets = secrets.replace("\n", "")
                                 secrets = secrets.replace(" ", "")
                                 secrets = json.loads(secrets)
                                 print(secrets["region_name"])
-                                print('*******************************')
                                 con = get_db_conn(secrets)
                                 cur = con.cursor()
                                 print("Db connection established")
