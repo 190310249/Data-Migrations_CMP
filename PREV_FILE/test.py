@@ -27,34 +27,37 @@ try:
     for bucket in s3.buckets.all():
         s3_bucket.append(bucket.name)
         logger.info('Appended all the buckets to s3_bucket list')
-    print(s3_bucket)
+    # print(s3_bucket)
 except Exception as e:
     logger.error("Unable to fetch S3 bucket")
     logger.error(e)
 
 
-# Read the index.txt file from testbucketsuraj bucket
+# Read the index.txt file from index-bucket-cmp bucket
 try:
-    if 'index-bucket-sf' and 'parquet-bucket-sf' and 'testbucketsuraj' in s3_bucket:
+    if 'index-bucket-sfs' and 'parquet-bucket-sfs' in s3_bucket:
         logger.info("index-bucket and parquet-bucket found in the s3_bucket list")
-        index_bucket = s3.Bucket('index-bucket-sf')
-        parquet_bucket1 = s3.Bucket('parquet-bucket-sf')
-        testbucketsuraj = s3.Bucket('testbucketsuraj')
+        index_bucket = s3.Bucket('index-bucket-sfs')
+        parquet_bucket1 = s3.Bucket('parquet-bucket-sfs')
         table_list = []
         index_parquet_list = []
         split_table_list = []
-
+        
         logger.info("Checking for parquet file and table")
+        # print(parquet_bucket1.objects.all())  #TESTING
         for obj1 in parquet_bucket1.objects.all():
+            print(obj1)
             key1 = obj1.key
             table_list.append(key1)
             if key1.split('/')[1] not in table_list:
                 split_table_list.append(key1.split('/')[1])
+        print('Explit')
         print("Table List : ",table_list)
         print("split Table List : ", split_table_list)
 
         logger.info("checking for index file in index bucket")
         for obj in index_bucket.objects.all():
+            
             key = obj.key
             print(key)
             if key=='index.txt':
