@@ -30,6 +30,7 @@ secrets = get_secret()
 secrets = secrets.replace("\n", "")
 secrets = secrets.replace(" ", "")
 secrets = json.loads(secrets)
+# print(secrets["region_name"])
 
 # UPLOAD LOG-FILES
 
@@ -106,7 +107,7 @@ if __name__ == '__main__':
                         for i in index_parquet_list:  
                             logger.info("checking parquet file")
                             logger.info(i)
-                        for i in split_table_list: # CODE NOT EXECUTED
+                        for i in split_table_list: 
                             logger.info("Available in s3 parquet bucket") 
                             # print("Table List : ",table_list)
                             # print("Table List 1 : ",table_list_1)
@@ -131,37 +132,24 @@ if __name__ == '__main__':
                                 parquet_buck = table_list[i]
                                 # print(table,':',parquet_buck)
                                 copy_command = ('"'+'COPY '+table+ ' FROM '+'s3://parquet-bucket-sfs/'+parquet_buck+' IAM_ROLE arn:aws:iam::143580737085:role/migrationrole'+' FORMAT AS PARQUET;'+'"')
-                                print(copy_command)
+                                # print(copy_command)
+                                print("Db connection started 111")
+                                logger.log("Creating Database Connection") # CODE NOT EXECUTED
+                                secrets = get_secret()                                
+                                secrets = secrets.replace("\n", "")
+                                secrets = secrets.replace(" ", "")
+                                secrets = json.loads(secrets)
+                                print(secrets["region_name"])
+                                print('*******************************')
+                                con = get_db_conn(secrets)
+                                cur = con.cursor()
+                                print("Db connection established")
+                                print("copy started")
+                                cur.execute(copy_command)
+                                con.commit()
 
-
-
-                                # copy_command = ("COPY +'split_table'+ FROM 's3://parquet-bucket-sfs/table_1/userdata8.parquet' IAM_ROLE 'arn:aws:iam::143580737085:role/migrationrole' FORMAT AS PARQUET;")
-
-                                # copy_command = ("COPY 'split_table' FROM 's3://parquet-bucket-sfs/table_1/userdata8.parquet' IAM_ROLE 'arn:aws:iam::143580737085:role/migrationrole' FORMAT AS PARQUET;") # Suraj
-                                # # print("processing file :" + 's3://parquet-bucket-1/'+ table_list[split_table_list.index(i)] + 'start time : ')
-
-                                # logger.log("Creating Database Connection")
-                                # con = get_db_conn()
-                                # cur = con.cursor()
-
-                                # logger.log("Truncating the table")
-                                # logger.log(table_list[split_table_list.index(i)][0])
-
-                                # curr_table = "truncate table global." + table_list[split_table_list.index(i)][0]
-                                # cur.execute(curr_table)
-
-                                # logger.log("Copying started for parquet file to redshift")
-                                # logger.log(table_list[split_table_list.index(i)])
-
-                                # cur.execute(copy_command)
-                                # con.commit()
-                                # logger.log("Copying completed to redshift for file")
-                                # logger.log(table_list[split_table_list.index(i)])
-
-                                # print("Data processing completed successfully for file :" + 's3://parquet-bucket-1/' + table_list[split_table_list.index(i)])
-                                # # exit(0)
                             else:
-                                pass
+                                logger.error("Erro in Database Connection")
                                 
                     else:
                         logger.error("Index File Not Present-----!!")
