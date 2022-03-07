@@ -9,6 +9,10 @@ import json
 from botocore.exceptions import ClientError
 from logging import *
 
+LOG_FORMAT = '{lineno}  : {name}: {asctime}: {message}'
+basicConfig(filename='logfile.log',level=DEBUG, filemode = 'a',style='{',format=LOG_FORMAT)
+logger = getLogger('SFHTC')
+
 
 
 if __name__ == '__main__':
