@@ -14,3 +14,8 @@
 #         count_array.append('F')
 
 # print(count_array)
+
+#"COPY table_1 FROM 's3://parquet-bucket-sfs/table_1/userdata8.parquet' IAM_ROLE 'arn:aws:iam::143580737085:role/migrationrole' FORMAT AS PARQUET;"
+#"COPY table FROM s3://parquet-bucket-sfs/parquet_buck IAM_ROLE arn:aws:iam::143580737085:role/migrationrole FORMAT AS PARQUET;"
+copy_command = ('"'+'COPY '+'table'+ ' FROM '+"'"+'s3://parquet-bucket-sfs/'+'parquet_buck'+' IAM_ROLE arn:aws:iam::143580737085:role/migrationrole'+"'"+' FORMAT AS PARQUET;'+'"')
+print(str(copy_command))

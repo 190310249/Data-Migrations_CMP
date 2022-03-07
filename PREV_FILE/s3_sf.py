@@ -145,7 +145,7 @@ if __name__ == '__main__':
                                 cur = con.cursor()
                                 print("Db connection established")
                                 print("copy started")
-                                cur.execute(copy_command)
+                                cur.execute(str(copy_command))
                                 con.commit()
 
                             else:
