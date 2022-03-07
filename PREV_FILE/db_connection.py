@@ -75,7 +75,7 @@ class DBConnection:
             return db_conn
         except Exception as e:
             logger.critical("Exception in DB Connection")
-            print(e)
+            # print(e)
             logger.error(e)
 
 def get_db_conn(secrets):
