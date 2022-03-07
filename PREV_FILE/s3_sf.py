@@ -85,6 +85,6 @@ if __name__ == '__main__':
         logger.critical("Main Execution Stopped----->")
 
     finally:
-        upload_log('testbucketsuraj')
+        upload_log('index-bucket-cmp')
         
         logger.info("Job Executed------------------------------------------------------------------------------------------------------------------")
