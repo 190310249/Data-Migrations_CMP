@@ -171,7 +171,7 @@ if __name__ == '__main__':
         logger.critical("Main Execution Stopped----->")
 
     finally:
-        upload_log('log-bucket')
+        # upload_log('log-bucket')
         logger.info("Job Executed------------------------------------------------------------------------------------------------------------------")
 
 

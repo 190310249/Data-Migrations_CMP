@@ -13,6 +13,7 @@ import os
 # GLOBAL INITIALIZATION
 s3_bucket = []
 table_list = []
+table_list_1 = []
 index_parquet_list = []
 split_table_list = []
 split_table = []
@@ -81,13 +82,11 @@ if __name__ == '__main__':
 
                 for obj2 in parquet_bucket1.objects.all():
                     key2 = obj2.key
-                    table_list.append(key2)
-                    if key1.split('/')[1] not in table_list:
+                    table_list_1.append(key2)
+                    if key1.split('/')[1] not in table_list_1:
                         split_table_list.append(key1.split('/')[1])
-                print("Table List : ",table_list)
-                print("split Table List : ", split_table_list)
-                print("split Table : ", split_table)
 
+                
                 logger.info("checking for index file in index bucket")
                 for obj in index_bucket.objects.all():                    
                     key = obj.key
@@ -106,40 +105,64 @@ if __name__ == '__main__':
                         logger.info("Parquet file details of index.txt updated in index_parquet_list")                       
                         for i in index_parquet_list:  
                             logger.info("checking parquet file")
-                            logger.info(i)     
-                            # CODE DONE
-                            for i in split_table_list: # CODE NOT EXECUTED
-                                  
-                                # print(table_list[split_table_list[0]])
-                                # # print("Matched: ",i)
-
-                                logger.info("Available in s3 parquet bucket")
-
+                            logger.info(i)
+                        for i in split_table_list: # CODE NOT EXECUTED
+                            logger.info("Available in s3 parquet bucket") 
+                            # print("Table List : ",table_list)
+                            # print("Table List 1 : ",table_list_1)
+                            # # print("split Table List : ", split_table_list)
+                            # print("split Table : ", split_table)
+                        count_array = []
+                        count=0
+                        prev = ''
+                        count_array.append('F')
+                        for i in range(0,len(split_table)-1):
+                            if split_table[i] == split_table[i+1]:
+                                count_array.append('T')
+                            else:
+                                count_array.append('F')
+                                # print(count_array)
+                        n= len(count_array)
+                        print(n)
+                        for i in range(n):
+                            if(count_array[i]=='T'):
                                 print("Parquet file validation will happen")
-                                # copy_command = ("COPY global.ecy_job1 FROM " + "'s3://parquet-bucket-1/" + table_list[split_table_list.index(i)][0] + "{}'".format(l[0]) + "IAM_ROLE 'arn:aws:iam::0123456789:role/sf_poc_redshift_role'" + 'FORMAT AS PARQUET;')
-                                copy_command = ("COPY table_1 FROM 's3://parquet-bucket-sfs/table_1/userdata8.parquet' IAM_ROLE 'arn:aws:iam::143580737085:role/migrationrole' FORMAT AS PARQUET;") # Suraj
-                                # print("processing file :" + 's3://parquet-bucket-1/'+ table_list[split_table_list.index(i)] + 'start time : ')
+                                table = split_table[i]
+                                parquet_buck = table_list[i]
+                                # print(table,':',parquet_buck)
+                                copy_command = ('"'+'COPY '+table+ ' FROM '+'s3://parquet-bucket-sfs/'+parquet_buck+' IAM_ROLE arn:aws:iam::143580737085:role/migrationrole'+' FORMAT AS PARQUET;'+'"')
+                                print(copy_command)
 
-                                logger.log("Creating Database Connection")
-                                con = get_db_conn()
-                                cur = con.cursor()
 
-                                logger.log("Truncating the table")
-                                logger.log(table_list[split_table_list.index(i)][0])
 
-                                curr_table = "truncate table global." + table_list[split_table_list.index(i)][0]
-                                cur.execute(curr_table)
+                                # copy_command = ("COPY +'split_table'+ FROM 's3://parquet-bucket-sfs/table_1/userdata8.parquet' IAM_ROLE 'arn:aws:iam::143580737085:role/migrationrole' FORMAT AS PARQUET;")
 
-                                logger.log("Copying started for parquet file to redshift")
-                                logger.log(table_list[split_table_list.index(i)])
+                                # copy_command = ("COPY 'split_table' FROM 's3://parquet-bucket-sfs/table_1/userdata8.parquet' IAM_ROLE 'arn:aws:iam::143580737085:role/migrationrole' FORMAT AS PARQUET;") # Suraj
+                                # # print("processing file :" + 's3://parquet-bucket-1/'+ table_list[split_table_list.index(i)] + 'start time : ')
 
-                                cur.execute(copy_command)
-                                con.commit()
-                                logger.log("Copying completed to redshift for file")
-                                logger.log(table_list[split_table_list.index(i)])
+                                # logger.log("Creating Database Connection")
+                                # con = get_db_conn()
+                                # cur = con.cursor()
 
-                                print("Data processing completed successfully for file :" + 's3://parquet-bucket-1/' + table_list[split_table_list.index(i)])
-                                # exit(0)
+                                # logger.log("Truncating the table")
+                                # logger.log(table_list[split_table_list.index(i)][0])
+
+                                # curr_table = "truncate table global." + table_list[split_table_list.index(i)][0]
+                                # cur.execute(curr_table)
+
+                                # logger.log("Copying started for parquet file to redshift")
+                                # logger.log(table_list[split_table_list.index(i)])
+
+                                # cur.execute(copy_command)
+                                # con.commit()
+                                # logger.log("Copying completed to redshift for file")
+                                # logger.log(table_list[split_table_list.index(i)])
+
+                                # print("Data processing completed successfully for file :" + 's3://parquet-bucket-1/' + table_list[split_table_list.index(i)])
+                                # # exit(0)
+                            else:
+                                pass
+                                
                     else:
                         logger.error("Index File Not Present-----!!")
                         print("writing in log file index.txt not present")
