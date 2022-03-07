@@ -54,11 +54,6 @@ def get_secret():
 # DB connection
 class DBConnection:
     def __init__(self, secrets): ## These values should be read from AWS Secret Manager - In Secret Manager Password and userid should be encrypted form.
-        # self.host = "redshift-cluster-1.c04kzwicvscs.ap-south-1.redshift.amazonaws.com"
-        # self.port = "5439"
-        # self.dbname = "dev"
-        # self.user = "awsuser"
-        # self.password = "MNTHfyget1-"
         self.host = secrets["host"]
         self.port = str(secrets["port"])
         self.dbname = "dev"
@@ -68,7 +63,6 @@ class DBConnection:
 
     def get_db_connection(self):
         try:
-            # db_conn = psycopg2.connect(host=self.host, port=self.port, dbname=self.dbname, user=self.user,password=self.password)
             db_conn = redshift_connector.connect(
                         host=self.host,
                         database=self.dbname,
@@ -80,10 +74,8 @@ class DBConnection:
             db_conn.autocommit = True
             return db_conn
         except Exception as e:
-            #print("Exception in DB connection", e)
             logger.critical("Exception in DB Connection")
             print(e)
-            # print("Db connection failed")
             logger.error(e)
 
 def get_db_conn(secrets):
