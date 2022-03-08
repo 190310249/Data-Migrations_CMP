@@ -56,7 +56,7 @@ class DBConnection:
     def __init__(self, secrets): ## These values should be read from AWS Secret Manager - In Secret Manager Password and userid should be encrypted form.
         self.host = secrets["host"]
         self.port = str(secrets["port"])
-        self.dbname = "dev"
+        self.dbname = secrets["dbname"]
         self.user = secrets["username"]
         self.password = secrets["password"]
 
@@ -70,7 +70,7 @@ class DBConnection:
                         password=self.password
             )
             logger.info("DB Connection Successful")
-            print("Db connection established")
+            print("Db connection established 1111")
             db_conn.autocommit = True
             return db_conn
         except Exception as e:
@@ -82,4 +82,4 @@ def get_db_conn(secrets):
     logger.info("Inside get_db_conn")
     postgres_db = DBConnection(secrets)
     db_conn = postgres_db.get_db_connection()
-    return 
+    return db_conn

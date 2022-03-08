@@ -125,26 +125,29 @@ if __name__ == '__main__':
                                 # print(count_array)
                         n= len(count_array)
                         print(n)
+                        print(secrets)
+                        con = get_db_conn(secrets)
+                        cur = con.cursor()
+                        print('PASSED')
                         for i in range(n):
                             if(count_array[i]=='T'):
                                 print("Parquet file validation will happen")
                                 table = split_table[i]
                                 parquet_buck = table_list[i]
-                                print(table,':',parquet_buck)
-                                copy_command = ('"'+'COPY '+table+ ' FROM '+'s3://parquet-bucket-sfs/'+parquet_buck+' IAM_ROLE arn:aws:iam::143580737085:role/migrationrole'+' FORMAT AS PARQUET;'+'"')
-                                print(copy_command)
-                                print("Db connection started 111")
-                                # logger.log("Creating Database Connection") # CODE NOT EXECUTED
-                                secrets = get_secret()                                
-                                secrets = secrets.replace("\n", "")
-                                secrets = secrets.replace(" ", "")
-                                secrets = json.loads(secrets)
+                                # print(table,':',parquet_buck)
+                                # copy_command = ('"'+'COPY '+table+ ' FROM '+'s3://parquet-bucket-sfs/'+parquet_buck+' IAM_ROLE arn:aws:iam::143580737085:role/migrationrole'+' FORMAT AS PARQUET;'+'"')
+                                # print(copy_command)
+                                print("Db connection started ")
+                                # logger.log("Creating Database Connection") 
                                 print(secrets["region_name"])
                                 con = get_db_conn(secrets)
                                 cur = con.cursor()
-                                print("Db connection established")
                                 print("copy started")
-                                cur.execute(str(copy_command))
+                                print("Db connection established")
+                                copy_command = ("COPY "+table +" FROM '"+'s3://parquet-bucket-sfs/'+parquet_buck+"' IAM_ROLE '"+"arn:aws:iam::143580737085:role/migrationrole'"+"FORMAT AS PARQUET;")
+                                print(copy_command)                              
+                                cur.execute(copy_command) # CODE NOT EXECUTED
+                                print('execute ended')
                                 con.commit()
 
                             else:
