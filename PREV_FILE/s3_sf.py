@@ -98,10 +98,10 @@ if __name__ == '__main__':
                             logger.info(i)
                         for i in split_table_list: 
                             logger.info("Available in s3 parquet bucket") 
-                            # print("Table List : ",table_list)
+                        print("Table List : ",table_list)
                             # print("Table List 1 : ",table_list_1)
-                            # # print("split Table List : ", split_table_list)
-                            # print("split Table : ", split_table)
+                            # print("split Table List : ", split_table_list)
+                        print("split Table : ", split_table)
                         count_array = []
                         count=0
                         prev = ''
@@ -111,7 +111,7 @@ if __name__ == '__main__':
                                 count_array.append('T')
                             else:
                                 count_array.append('F')
-                                # print(count_array)
+                        print(count_array)
                         n= len(count_array)
                         # print(n)
                         # print(secrets)
@@ -141,7 +141,7 @@ if __name__ == '__main__':
                                 # logger.log("Truncating the table")
                                 # logger.log(table_list[split_table_list.index(i)][0])
                                 
-                                print("copy started")
+                                print("copy started ",parquet_buck)
                                 print("Db connection established")
                                 copy_command = ("COPY "+table +" FROM '"+'s3://parquet-bucket-sfs/'+parquet_buck+"' IAM_ROLE '"+"arn:aws:iam::143580737085:role/migrationrole'"+"FORMAT AS PARQUET;")
                                 # print(copy_command)                              

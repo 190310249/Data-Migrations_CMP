@@ -72,7 +72,7 @@ class DBConnection:
                         password=self.password
             )
             logger.info("DB Connection Successful")
-            print("Db connection established 1111")
+            # print("Db connection established 1111")
             db_conn.autocommit = True
             return db_conn
         except Exception as e:
