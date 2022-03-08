@@ -18,6 +18,7 @@ index_parquet_list = []
 split_table_list = []
 split_table = []
 truncate_table_list = []
+
 # LOG FILE SET UP
 LOG_FORMAT = '{lineno}  : {name}: {asctime}: {message}'
 basicConfig(filename='logfile.log',level=DEBUG, filemode = 'a',style='{',format=LOG_FORMAT)
@@ -25,25 +26,12 @@ logger = getLogger('SFHTC')
 
 # AWS SECRETE MANAGER
 
-os.environ['aws_access_key_id'] = 'AKIASC3QUFY6SICETLNP'
-os.environ['aws_secret_access_key'] = 'SsC4FkH6zcMfjqpyu1ZgJjGJAoSVu1cRlyGJi0Ps'
 secrets = get_secret()
 secrets = secrets.replace("\n", "")
 secrets = secrets.replace(" ", "")
 secrets = json.loads(secrets)
 # print(secrets["region_name"])
 
-# UPLOAD LOG-FILES
-
-def upload_log(bucket_name):
-    logger.info("Inside upload_log function")
-    folder = 'logfile/' + 'logfile.log'
-    try:
-        s3_client.upload_file('logfile.log', bucket_name, folder)
-        logger.info("Log File Uploaded Successfully!!.")
-    except Exception as e:
-        logger.error("LogFile Uploaded Failed!!.")
-        logger.error(e)
 
 # MAIN FUNCTION
 
@@ -113,7 +101,7 @@ if __name__ == '__main__':
                             # print("Table List : ",table_list)
                             # print("Table List 1 : ",table_list_1)
                             # # print("split Table List : ", split_table_list)
-                            print("split Table : ", split_table)
+                            # print("split Table : ", split_table)
                         count_array = []
                         count=0
                         prev = ''
@@ -125,8 +113,8 @@ if __name__ == '__main__':
                                 count_array.append('F')
                                 # print(count_array)
                         n= len(count_array)
-                        print(n)
-                        print(secrets)
+                        # print(n)
+                        # print(secrets)
                         con = get_db_conn(secrets)
                         cur = con.cursor()
                         print('PASSED')
@@ -136,7 +124,7 @@ if __name__ == '__main__':
                                 curr_table = "truncate table " + i
                                 cur.execute(curr_table)
                                 truncate_table_list.append(i)
-                        print(truncate_table_list)
+                        # print(truncate_table_list)
 
                         for i in range(n):
                             if(count_array[i]=='T'):
@@ -148,7 +136,6 @@ if __name__ == '__main__':
                                 # print(copy_command)
                                 print("Db connection started ")
                                 # logger.log("Creating Database Connection") 
-                                print(secrets["region_name"])
                                 con = get_db_conn(secrets)
                                 cur = con.cursor()
                                 # logger.log("Truncating the table")
@@ -157,7 +144,7 @@ if __name__ == '__main__':
                                 print("copy started")
                                 print("Db connection established")
                                 copy_command = ("COPY "+table +" FROM '"+'s3://parquet-bucket-sfs/'+parquet_buck+"' IAM_ROLE '"+"arn:aws:iam::143580737085:role/migrationrole'"+"FORMAT AS PARQUET;")
-                                print(copy_command)                              
+                                # print(copy_command)                              
                                 cur.execute(copy_command) # CODE NOT EXECUTED
                                 print('execute ended')
                                 con.commit()

@@ -19,6 +19,8 @@ def get_secret():
 
     secret_name = "arn:aws:secretsmanager:ap-south-1:143580737085:secret:Betasecret-YGtgyr"
     region_name = "ap-south-1"
+    os.environ['aws_access_key_id'] = 'AKIASC3QUFY6SICETLNP'
+    os.environ['aws_secret_access_key'] = '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'
 
     # Create a Secrets Manager client
     session = boto3.session.Session()
