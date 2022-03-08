@@ -17,6 +17,7 @@ table_list_1 = []
 index_parquet_list = []
 split_table_list = []
 split_table = []
+truncate_table_list = []
 # LOG FILE SET UP
 LOG_FORMAT = '{lineno}  : {name}: {asctime}: {message}'
 basicConfig(filename='logfile.log',level=DEBUG, filemode = 'a',style='{',format=LOG_FORMAT)
@@ -112,7 +113,7 @@ if __name__ == '__main__':
                             # print("Table List : ",table_list)
                             # print("Table List 1 : ",table_list_1)
                             # # print("split Table List : ", split_table_list)
-                            # print("split Table : ", split_table)
+                            print("split Table : ", split_table)
                         count_array = []
                         count=0
                         prev = ''
@@ -129,6 +130,14 @@ if __name__ == '__main__':
                         con = get_db_conn(secrets)
                         cur = con.cursor()
                         print('PASSED')
+                        #Truncate the Database
+                        for i in split_table:
+                            if i not in truncate_table_list: 
+                                curr_table = "truncate table " + i
+                                cur.execute(curr_table)
+                                truncate_table_list.append(i)
+                        print(truncate_table_list)
+
                         for i in range(n):
                             if(count_array[i]=='T'):
                                 print("Parquet file validation will happen")
@@ -142,6 +151,9 @@ if __name__ == '__main__':
                                 print(secrets["region_name"])
                                 con = get_db_conn(secrets)
                                 cur = con.cursor()
+                                # logger.log("Truncating the table")
+                                # logger.log(table_list[split_table_list.index(i)][0])
+                                
                                 print("copy started")
                                 print("Db connection established")
                                 copy_command = ("COPY "+table +" FROM '"+'s3://parquet-bucket-sfs/'+parquet_buck+"' IAM_ROLE '"+"arn:aws:iam::143580737085:role/migrationrole'"+"FORMAT AS PARQUET;")
