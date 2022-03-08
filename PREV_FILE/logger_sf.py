@@ -14,7 +14,7 @@ LOG_DIR = os.path.join(BASE_DIR, "PREV_FILE\logfile.log")
 
 
 LOG_FORMAT = '{lineno}  : {name}: {asctime}: {message}'
-basicConfig(filename='logfile.log',level=DEBUG, filemode = 'a',style='{',format=LOG_FORMAT)
+basicConfig(filename='logfile.log',level=DEBUG, filemode = 'r+',style='{',format=LOG_FORMAT)
 logger = getLogger('SFHTC')
 
 
