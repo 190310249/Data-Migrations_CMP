@@ -1,0 +1,150 @@
+420  : botocore.hooks: 2022-03-08 12:17:48,188: Changing event name from creating-client-class.iot-data to creating-client-class.iot-data-plane
+420  : botocore.hooks: 2022-03-08 12:17:48,189: Changing event name from before-call.apigateway to before-call.api-gateway
+420  : botocore.hooks: 2022-03-08 12:17:48,191: Changing event name from request-created.machinelearning.Predict to request-created.machine-learning.Predict
+420  : botocore.hooks: 2022-03-08 12:17:48,192: Changing event name from before-parameter-build.autoscaling.CreateLaunchConfiguration to before-parameter-build.auto-scaling.CreateLaunchConfiguration
+420  : botocore.hooks: 2022-03-08 12:17:48,195: Changing event name from before-parameter-build.route53 to before-parameter-build.route-53
+420  : botocore.hooks: 2022-03-08 12:17:48,195: Changing event name from request-created.cloudsearchdomain.Search to request-created.cloudsearch-domain.Search
+420  : botocore.hooks: 2022-03-08 12:17:48,196: Changing event name from docs.*.autoscaling.CreateLaunchConfiguration.complete-section to docs.*.auto-scaling.CreateLaunchConfiguration.complete-section
+420  : botocore.hooks: 2022-03-08 12:17:48,198: Changing event name from before-parameter-build.logs.CreateExportTask to before-parameter-build.cloudwatch-logs.CreateExportTask
+420  : botocore.hooks: 2022-03-08 12:17:48,198: Changing event name from docs.*.logs.CreateExportTask.complete-section to docs.*.cloudwatch-logs.CreateExportTask.complete-section
+420  : botocore.hooks: 2022-03-08 12:17:48,198: Changing event name from before-parameter-build.cloudsearchdomain.Search to before-parameter-build.cloudsearch-domain.Search
+420  : botocore.hooks: 2022-03-08 12:17:48,198: Changing event name from docs.*.cloudsearchdomain.Search.complete-section to docs.*.cloudsearch-domain.Search.complete-section
+413  : botocore.utils: 2022-03-08 12:17:48,225: IMDS ENDPOINT: http://169.254.169.254/
+1984  : botocore.credentials: 2022-03-08 12:17:48,226: Looking for credentials via: env
+1984  : botocore.credentials: 2022-03-08 12:17:48,226: Looking for credentials via: assume-role
+1984  : botocore.credentials: 2022-03-08 12:17:48,227: Looking for credentials via: assume-role-with-web-identity
+1984  : botocore.credentials: 2022-03-08 12:17:48,227: Looking for credentials via: sso
+1984  : botocore.credentials: 2022-03-08 12:17:48,227: Looking for credentials via: shared-credentials-file
+1984  : botocore.credentials: 2022-03-08 12:17:48,227: Looking for credentials via: custom-process
+1984  : botocore.credentials: 2022-03-08 12:17:48,227: Looking for credentials via: config-file
+1984  : botocore.credentials: 2022-03-08 12:17:48,227: Looking for credentials via: ec2-credentials-file
+1984  : botocore.credentials: 2022-03-08 12:17:48,227: Looking for credentials via: boto-config
+1984  : botocore.credentials: 2022-03-08 12:17:48,227: Looking for credentials via: container-role
+1984  : botocore.credentials: 2022-03-08 12:17:48,227: Looking for credentials via: iam-role
+228  : urllib3.connectionpool: 2022-03-08 12:17:48,228: Starting new HTTP connection (1): 169.254.169.254:80
+440  : botocore.utils: 2022-03-08 12:17:48,228: Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/api/token: Could not connect to the endpoint URL: "http://169.254.169.254/latest/api/token"
+Traceback (most recent call last):
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+OSError: [WinError 10051] A socket operation was attempted to an unreachable network
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\httpsession.py", line 403, in send
+    urllib_response = conn.urlopen(
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 525, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\packages\six.py", line 770, in reraise
+    raise value
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\awsrequest.py", line 92, in _send_request
+    rval = super(AWSConnection, self)._send_request(
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\awsrequest.py", line 120, in _send_output
+    self.send(msg)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\awsrequest.py", line 204, in send
+    return super(AWSConnection, self).send(str)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPConnection object at 0x000001B5B98736A0>: Failed to establish a new connection: [WinError 10051] A socket operation was attempted to an unreachable network
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\utils.py", line 430, in _fetch_metadata_token
+    response = self._session.send(request.prepare())
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\httpsession.py", line 432, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "http://169.254.169.254/latest/api/token"
+228  : urllib3.connectionpool: 2022-03-08 12:17:48,232: Starting new HTTP connection (2): 169.254.169.254:80
+482  : botocore.utils: 2022-03-08 12:17:48,246: Caught retryable HTTP exception while making metadata service request to http://169.254.169.254/latest/meta-data/iam/security-credentials/: Could not connect to the endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+Traceback (most recent call last):
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
+    raise err
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    sock.connect(sa)
+OSError: [WinError 10051] A socket operation was attempted to an unreachable network
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\httpsession.py", line 403, in send
+    urllib_response = conn.urlopen(
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\util\retry.py", line 525, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\packages\six.py", line 770, in reraise
+    raise value
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\awsrequest.py", line 92, in _send_request
+    rval = super(AWSConnection, self)._send_request(
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\awsrequest.py", line 120, in _send_output
+    self.send(msg)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\awsrequest.py", line 204, in send
+    return super(AWSConnection, self).send(str)
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 205, in connect
+    conn = self._new_conn()
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <botocore.awsrequest.AWSHTTPConnection object at 0x000001B5B9872920>: Failed to establish a new connection: [WinError 10051] A socket operation was attempted to an unreachable network
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\utils.py", line 478, in _get_request
+    response = self._session.send(request.prepare())
+  File "C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\httpsession.py", line 432, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+561  : botocore.utils: 2022-03-08 12:17:48,247: Max number of attempts exceeded (1) when attempting to retrieve data from metadata service.
+175  : botocore.loaders: 2022-03-08 12:17:48,248: Loading JSON file: C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\data\endpoints.json
+175  : botocore.loaders: 2022-03-08 12:17:48,257: Loading JSON file: C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\data\sdk-default-configuration.json
+210  : botocore.hooks: 2022-03-08 12:17:48,257: Event choose-service-name: calling handler <function handle_service_name_alias at 0x000001B5B95AC550>
+175  : botocore.loaders: 2022-03-08 12:17:48,314: Loading JSON file: C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\data\secretsmanager\2017-10-17\service-2.json
+175  : botocore.loaders: 2022-03-08 12:17:48,315: Loading JSON file: C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\data\secretsmanager\2017-10-17\service-2.sdk-extras.json
+210  : botocore.hooks: 2022-03-08 12:17:48,315: Event creating-client-class.secrets-manager: calling handler <function add_generate_presigned_url at 0x000001B5B954A3B0>
+294  : botocore.endpoint: 2022-03-08 12:17:48,316: Setting secretsmanager timeout as (60, 60)
+175  : botocore.loaders: 2022-03-08 12:17:48,317: Loading JSON file: C:\Users\M.PRATIK KUMAR\AppData\Local\Programs\Python\Python310\lib\site-packages\botocore\data\_retry.json
+193  : botocore.client: 2022-03-08 12:17:48,317: Registering retry handlers for service: secretsmanager
+210  : botocore.hooks: 2022-03-08 12:17:48,318: Event before-parameter-build.secrets-manager.GetSecretValue: calling handler <function generate_idempotent_uuid at 0x000001B5B95AF760>
+210  : botocore.hooks: 2022-03-08 12:17:48,318: Event before-call.secrets-manager.GetSecretValue: calling handler <function inject_api_version_header_if_needed at 0x000001B5B95DD000>
+102  : botocore.endpoint: 2022-03-08 12:17:48,318: Making request for OperationModel(name=GetSecretValue) with params: {'url_path': '/', 'query_string': '', 'method': 'POST', 'headers': {'X-Amz-Target': 'secretsmanager.GetSecretValue', 'Content-Type': 'application/x-amz-json-1.1', 'User-Agent': 'Boto3/1.20.41 Python/3.10.2 Windows/10 Botocore/1.23.41'}, 'body': b'{"SecretId": "arn:aws:secretsmanager:ap-south-1:143580737085:secret:Betasecret-YGtgyr"}', 'url': 'https://secretsmanager.ap-south-1.amazonaws.com/', 'context': {'client_region': 'ap-south-1', 'client_config': <botocore.config.Config object at 0x000001B5B9871F00>, 'has_streaming_input': False, 'auth_type': None}}
+210  : botocore.hooks: 2022-03-08 12:17:48,318: Event request-created.secrets-manager.GetSecretValue: calling handler <bound method RequestSigner.handler of <botocore.signers.RequestSigner object at 0x000001B5B9871FF0>>
+210  : botocore.hooks: 2022-03-08 12:17:48,318: Event choose-signer.secrets-manager.GetSecretValue: calling handler <function set_operation_specific_signer at 0x000001B5B95AF640>

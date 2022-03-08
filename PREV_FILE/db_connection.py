@@ -18,7 +18,7 @@ logger = getLogger('SFHTC')
 def get_secret():
 
     secret_name = "arn:aws:secretsmanager:ap-south-1:143580737085:secret:Betasecret-YGtgyr"
-    region_name = "ap-south-1"
+    region_name = "ap-south-1"    
     os.environ['aws_access_key_id'] = 'AKIASC3QUFY6SICETLNP'
     os.environ['aws_secret_access_key'] = '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'
 
@@ -46,6 +46,7 @@ def get_secret():
     else:
         if 'SecretString' in get_secret_value_response:
             secret = get_secret_value_response['SecretString']
+            print(secret)
             return secret
         else:
             decoded_binary_secret = base64.b64decode(get_secret_value_response['SecretBinary'])
@@ -85,3 +86,5 @@ def get_db_conn(secrets):
     postgres_db = DBConnection(secrets)
     db_conn = postgres_db.get_db_connection()
     return db_conn
+
+# get_secret()
